@@ -5,14 +5,14 @@ import 'package:lime/pages/news.dart';
 import 'package:lime/pages/talk.dart';
 import 'package:lime/pages/timeline.dart';
 import 'package:lime/pages/wallet.dart';
-import 'package:lime/providers/bottom_tab_bar_provider.dart';
+import 'package:lime/providers/bottom_tab_bar/root_tab_bar_provider.dart';
 import 'package:provider/provider.dart';
 
 class Root extends StatelessWidget {
   @override
   Widget build(_) =>
-      StateNotifierProvider<BottomTabBarController, BottomTabBarState>(
-        create: (_) => BottomTabBarController(),
+      StateNotifierProvider<RootTabBarController, RootTabBarState>(
+        create: (_) => RootTabBarController(),
         child: _Root(),
       );
 }
@@ -28,9 +28,9 @@ class _Root extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = context.watch<BottomTabBarController>();
+    final controller = context.watch<RootTabBarController>();
     var _currentIndex =
-        context.select((BottomTabBarState value) => value.currentIndex);
+        context.select((RootTabBarState value) => value.currentIndex);
 
     return Scaffold(
       body: currentTab[_currentIndex],
