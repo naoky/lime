@@ -16,9 +16,9 @@ class _Home extends StatelessWidget {
         title: 'Home',
       ),
       body: Container(
-        color: Colors.pink,
+        color: Colors.blue,
         child: Center(
-          child: Text('Home'),
+          child: Text('ホーム'),
         ),
       ),
     );
